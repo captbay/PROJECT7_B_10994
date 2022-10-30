@@ -22,7 +22,8 @@ class AuthController extends Controller
             'password' => 'required'
         ]);
 
-
+        if ($validate->fails())
+            return response(['message' => $validate->errors()], 400);
 
         $registrationData['password'] = bcrypt($request->password);
 
