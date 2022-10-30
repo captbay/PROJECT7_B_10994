@@ -54,7 +54,7 @@ class CustomerController extends Controller
     {
         $storeData = $request->all();
         $validate  = FacadesValidator::make($storeData, [
-            'nama_customer' => 'required|regex:/^[a-zA-Z\s]*$/|unique:customers',
+            'nama_customer' => 'required|alpha_spaces|unique:customers',
             'membership' => ['required', Rule::in(['Bronze', 'Platinum', 'Gold']),],
             'alamat' => 'required',
             'tgl_lahir' => 'required|date',
@@ -124,7 +124,7 @@ class CustomerController extends Controller
 
         $updateData = $request->all();
         $validate = FacadesValidator::make($updateData, [
-            'nama_customer' => ['required', 'regex:/^[a-zA-Z\s]*$/', Rule::unique('customers')->ignore($customers)],
+            'nama_customer' => ['required', 'alpha_spaces', Rule::unique('customers')->ignore($customers)],
             'membership' => ['required', Rule::in(['Bronze', 'Platinum', 'Gold']),],
             'alamat' => 'required',
             'tgl_lahir' => 'required|date',

@@ -12,6 +12,8 @@ return [
     | as the size rules. Feel free to tweak each of these messages here.
     |
     */
+    // Custom Validation message.
+    'alpha_spaces' => 'The :attribute may only contain letters and spaces.',
 
     'accepted' => 'The :attribute must be accepted.',
     'accepted_if' => 'The :attribute must be accepted when :other is :value.',
