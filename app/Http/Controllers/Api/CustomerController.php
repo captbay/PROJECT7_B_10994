@@ -45,7 +45,7 @@ class CustomerController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Store a newly created resource in storage tabel.
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
